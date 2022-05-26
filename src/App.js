@@ -1,24 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.scss";
 
 function App() {
+  return <Header />;
+}
+
+function Header() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <header className="header">
+      <div className="container">
+        <div className="logo">
+          <img src={logo} alt="react" />
+        </div>
+
+        <button
+          class="nav-opener"
+          onClick={() => {
+            const nav = document.querySelector(".header__nav-holder");
+            nav.classList.toggle("opened");
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <span></span>
+        </button>
+        <div className="header__nav-holder">
+          <nav className="nav">
+            <ul className="nav__list">
+              <li className="nav__item">
+                <a href="#" className="nav__link">
+                  Product
+                </a>
+              </li>
+              <li className="nav__item">
+                <a href="#" className="nav__link">
+                  Customers
+                </a>
+              </li>
+              <li className="nav__item">
+                <a href="#" className="nav__link">
+                  Pricing
+                </a>
+              </li>
+              <li className="nav__item">
+                <a href="#" className="nav__link">
+                  Resources
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <ul className="btn-list">
+            <li className="btn-list__item">
+              <a href="#" className="btn btn_white">
+                Sign In
+              </a>
+            </li>
+            <li className="btn-list__item">
+              <a href="#" className="btn">
+                Sign Up
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
   );
 }
 

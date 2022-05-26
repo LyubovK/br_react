@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $black;
+  font-size: $font-size-global;
+  font-weight: 500;
+  line-height: $line-height;
+}
+
+.page-wrapper {
+  padding-top: 80px;
+}
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include breakpoint(xl) {
+    max-width: 1024px;
+  }
+  @include breakpoint(md) {
+    max-width: 100%;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.btn-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -7px;
+
+  &__item {
+    display: block;
+    padding: 0 7px;
+  }
+}
+
+.btn {
+  display: block;
+  text-decoration: none;
+  background-color: $orange;
+  color: $white;
+  border-radius: 4px;
+  padding: 10px 23px;
+  border: 1px solid $orange;
+
+  &_white {
+    background: $white;
+    border: 1px solid $black;
+    color: $black;
+  }
+}
